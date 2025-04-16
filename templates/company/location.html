@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- 상단 배너 -->
+<div class="banner">
+    <img src="{{ url_for('static', filename='images/banner1.png') }}" alt="COMPANY 배너">
+</div>
+
+<!-- 본문 구조 -->
+<div class="container my-5">
+    <div class="row">
+        <!-- 좌측 메뉴 -->
+        <div class="col-md-3">
+            <h4>COMPANY</h4>
+            <div class="list-group">
+                <a href="/company/greeting" class="list-group-item list-group-item-action">인사말</a>
+                <a href="/company/organization" class="list-group-item list-group-item-action">조직도</a>
+                <a href="/company/location" class="list-group-item list-group-item-action active">찾아오시는 길</a>
+            </div>
+        </div>
+
+        <!-- 본문 내용 -->
+        <div class="col-md-9">
+            <div class="breadcrumb">HOME &gt; COMPANY &gt; 찾아오시는 길</div>
+            <h2>찾아오시는길</h2>
+
+            <!-- 지도 영역 -->
+            <div class="my-4">
+                <iframe width="100%" height="400" frameborder="0"
+                    src="https://map.kakao.com/?urlX=519284&urlY=1092389&itemId=19230190&q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%9A%A9%EC%9D%B8%EC%8B%9C%20%EA%B0%80%EC%A3%BC%EA%B5%AC%20%EC%B6%A9%EC%A0%84%EB%A1%9C%2010&srcid=19230190&map_type=TYPE_MAP&from=roughmap">
+                </iframe>
+            </div>
+
+            <!-- 주소 및 연락처 -->
+            <div class="mt-4">
+                <p><strong>주소:</strong> 경기도 용인시 기흥구 죽전로 10 6층 601호 (본점, 죽전역 근처)</p>
+                <p><strong>전화:</strong> 070-8285-2083</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

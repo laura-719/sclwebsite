@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="banner">
+    <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="SERVICE 배너">
+</div>
+
+<div class="container my-4">
+    <div class="row">
+        <!-- 사이드바 -->
+        <div class="col-md-3">
+            <h4>SERVICE</h4>
+            <div class="list-group">
+                <a href="/service/notice" class="list-group-item list-group-item-action active">공지사항</a>
+                <a href="/service/qna" class="list-group-item list-group-item-action">문의게시판</a>
+            </div>
+        </div>
+
+        <!-- 본문 -->
+        <div class="col-md-9">
+            <div class="breadcrumb">HOME &gt; SERVICE &gt; 공지사항</div>
+            <h2>공지사항</h2>
+
+            <table class="table table-bordered table-hover">
+                <thead class="table-light">
+                    <tr>
+                        <th style="width: 5%">번호</th>
+                        <th style="width: 15%">카테고리</th>
+                        <th>제목</th>
+                        <th style="width: 15%">글쓴이</th>
+                        <th style="width: 15%">등록일</th>
+                        <th style="width: 10%">조회</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>공지</td>
+                        <td>ICT Company 공지사항입니다.</td>
+                        <td>관리자</td>
+                        <td>2025-03-31</td>
+                        <td>124</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>일반</td>
+                        <td>정기점검 안내</td>
+                        <td>ICT팀</td>
+                        <td>2025-03-25</td>
+                        <td>88</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="text-center mt-4">
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

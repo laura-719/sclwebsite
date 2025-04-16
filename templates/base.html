@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} - ICT Company</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Top nav -->
+    <div class="top-nav">
+        <div class="top-right">
+            <a href="/">HOME</a> |
+            <a href="#">LOGIN</a> |
+            <a href="#">JOIN</a> |
+            <a href="#">SITEMAP</a>
+        </div>
+    </div>
+
+    <!-- Main header -->
+<header class="main-header d-flex justify-content-between align-items-center px-4 py-3">
+    <div class="logo">
+        <a href="/">
+            <img src="{{ url_for('static', filename='images/logo_new.png') }}" alt="SCL Networks 로고" height="40">
+        </a>
+    </div>
+    
+    <!-- 가운데 정렬을 위한 컨테이너 -->
+    <div class="flex-grow-1 d-flex justify-content-center">
+        <nav class="main-nav d-flex gap-4">
+            <a href="/company/greeting" class="{% if section == 'COMPANY' %}active{% endif %}">COMPANY</a>
+            <a href="/business" class="{% if section == 'BUSINESS' %}active{% endif %}">BUSINESS</a>
+            <a href="/products" class="{% if section == 'PRODUCT' %}active{% endif %}">PRODUCT</a>
+            <a href="/service/notice" class="{% if section == 'SERVICE' %}active{% endif %}">SERVICE</a>
+        </nav>
+    </div>
+</header>
+
+    <!-- Submenu -->
+    {% if section %}
+    <nav class="sub-nav">
+        <ul class="submenu">
+            {% if section == 'COMPANY' %}
+                <li><a href="/company/greeting" class="{% if title == '인사말' %}active{% endif %}">인사말</a></li>
+                <li><a href="/company/organization" class="{% if title == '조직도' %}active{% endif %}">조직도</a></li>
+                <li><a href="/company/location" class="{% if title == '찾아오시는 길' %}active{% endif %}">찾아오시는 길</a></li>
+
+            {% elif section == 'BUSINESS' %}
+                <li><a href="/business" class="{% if title == '사업영역' %}active{% endif %}">사업영역</a></li>
+
+            {% elif section == 'PRODUCT' %}
+                <li><a href="#" class="{% if title == '취급품목' %}active{% endif %}">취급품목</a></li>
+                <li><a href="#" class="{% if title == '보유장비' %}active{% endif %}">보유장비</a></li>
+                <li><a href="#" class="{% if title == '인증서/기술개발' %}active{% endif %}">인증서/기술개발</a></li>
+
+            {% elif section == 'SERVICE' %}
+                <li><a href="/service/notice" class="{% if title == '공지사항' %}active{% endif %}">공지사항</a></li>
+                <li><a href="/service/qna" class="{% if title == '문의게시판' %}active{% endif %}">문의게시판</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+
+    <!-- Main content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+<footer class="footer mt-5 py-4 border-top">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <!-- 왼쪽: 로고 -->
+        <div class="mb-3 mb-md-0">
+            <img src="{{ url_for('static', filename='images/로고.png') }}" alt="SCL Networks 로고" height="45">
+        </div>
+
+        <!-- 오른쪽: 정보 -->
+        <div class="footer-text small text-muted">
+            <div class="mb-2">
+                <a href="#">이용약관</a> |
+                <a href="#">개인정보취급방침</a> |
+                <a href="#">이메일주소 무단수집거부</a> |
+                <a href="#">찾아오시는길</a>
+            </div>
+            <div>(주)에스씨엘네트웍스 | 대표이사 원유선 | 사업자등록번호 401-88-00953</div>
+            <div>전화 070-8285-2083 | 팩스 070-8285-2084 | 경기도 용인시 기흥구 죽전로 10/6층 601호</div>
+            <div>Copyright ⓒ (주)에스씨엘네트웍스 All rights reserved.</div>
+        </div>
+    </div>
+</footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="banner">
+    <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="COMPANY 배너">
+</div>
+
+<div class="container">
+    <aside class="sidebar">
+        <h3>COMPANY</h3>
+        <ul>
+            {% if section == "COMPANY" %}
+                <li><a href="/about/greeting" class="{{ 'active' if title == '인사말' else '' }}">인사말</a></li>
+                <li><a href="/about/org" class="{{ 'active' if title == '조직도' else '' }}">조직도</a></li>
+                <li><a href="/about/map" class="{{ 'active' if title == '찾아오시는 길' else '' }}">찾아오시는 길</a></li>
+            {% endif %}
+        </ul>
+    </aside>
+
+    <section class="content">
+        <div class="breadcrumb">HOME &gt; COMPANY &gt; 인사말</div>
+        <h2>인사말</h2>
+        <p>인사말에 대한 내용을 여기에 작성하세요.</p>
+    </section>
+</div>
+{% endblock %}

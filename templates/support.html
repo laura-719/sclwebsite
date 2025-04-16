@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="banner">
+    <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="SERVICE 배너">
+</div>
+
+<div class="container">
+    <aside class="sidebar">
+        <h3>SERVICE</h3>
+        <ul>
+            {% if section == "COMPANY" %}
+                <li><a href="/about/greeting" class="{{ 'active' if title == '인사말' else '' }}">인사말</a></li>
+                <li><a href="/about/org" class="{{ 'active' if title == '조직도' else '' }}">조직도</a></li>
+                <li><a href="/about/map" class="{{ 'active' if title == '찾아오시는 길' else '' }}">찾아오시는 길</a></li>
+            {% elif section == "BUSINESS" %}
+                <li><a href="/business">사업영역</a></li>
+            {% elif section == "PRODUCT" %}
+                <li><a href="/products">제품 및 기술</a></li>
+            {% elif section == "SERVICE" %}
+                <li><a href="/support">고객지원</a></li>
+                <li><a href="/contact">고객센터</a></li>
+            {% endif %}
+        </ul>
+    </aside>
+
+    <section class="content">
+        <div class="breadcrumb">HOME &gt; SERVICE &gt; 고객지원</div>
+        <h2>고객지원</h2>
+        <p>고객지원에 대한 내용을 여기에 작성하세요.</p>
+    </section>
+</div>
+{% endblock %}

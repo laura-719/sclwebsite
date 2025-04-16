@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- 상단 배너 -->
+<div class="banner">
+    <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="BUSINESS 배너">
+</div>
+
+<!-- 본문 전체 컨테이너 -->
+<div class="container my-5 d-flex">
+    
+    <!-- ✅ 왼쪽 사이드바 -->
+    <aside class="sidebar me-5" style="width: 220px;">
+        <div style="background-color: #3e62ad; padding: 1.5rem; color: white; font-size: 1.5rem; font-weight: bold;">
+            BUSINESS
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item active">사업분야</li>
+            <!-- 더 많은 메뉴가 있다면 아래에 추가 가능 -->
+            <!-- <li class="list-group-item">위성사업</li> -->
+        </ul>
+    </aside>
+
+    <!-- ✅ 본문 내용 영역 -->
+    <section class="flex-grow-1">
+        <div class="breadcrumb mb-3">HOME &gt; BUSINESS &gt; 사업분야</div>
+        <h2 class="mb-4">사업분야</h2>
+        <p class="mb-5">
+            최고의 글로벌 <strong style="color: #1c2375;">기술력</strong>으로 앞서가는 
+            <strong style="color: #1c2375;">SCL NETWORKS</strong>가 되겠습니다.
+        </p>
+
+        <!-- ✅ 사업 분야 항목 -->
+        <div class="business-box d-flex mb-5">
+            <img src="{{ url_for('static', filename='images/production.png') }}" alt="Production" class="business-thumb me-4">
+            <div>
+                <h4>PRODUCTION</h4>
+                <p>생산/제조</p>
+                <p class="text-muted">동축자재, 광자재</p>
+            </div>
+        </div>
+
+        <div class="business-box d-flex">
+            <img src="{{ url_for('static', filename='images/distribution.png') }}" alt="Distribution" class="business-thumb me-4">
+            <div>
+                <h4>DISTRIBUTION</h4>
+                <p>유통</p>
+                <p class="text-muted">동축장비, 광장비, RFoG장비, RFoverlay장비</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- 상단 배너 -->
+<div class="banner">
+    <img src="{{ url_for('static', filename='images/banner1.png') }}" alt="COMPANY 배너">
+</div>
+
+<!-- 본문 구조 -->
+<div class="container my-5">
+    <div class="row">
+        <!-- 좌측 메뉴 -->
+        <div class="col-md-3">
+            <h4>COMPANY</h4>
+            <div class="list-group">
+                <a href="/company/greeting" class="list-group-item list-group-item-action">인사말</a>
+                <a href="/company/organization" class="list-group-item list-group-item-action active">조직도</a>
+                <a href="/company/location" class="list-group-item list-group-item-action">찾아오시는 길</a>
+            </div>
+        </div>
+
+        <!-- 본문 내용 -->
+        <div class="col-md-9">
+            <div class="breadcrumb">HOME &gt; COMPANY &gt; 조직도</div>
+            <h2>조직도</h2>
+            <div class="text-center my-4">
+                <img src={{ url_for('static', filename='images/조직도.png') }} alt="조직도 이미지" class="img-fluid" style="max-width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
